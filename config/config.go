@@ -14,14 +14,14 @@ import (
 	"github.com/joho/godotenv"
 	"github.com/kelseyhightower/envconfig"
 	"github.com/rs/zerolog"
-	"github.com/screego/server/config/ipdns"
-	"github.com/screego/server/config/mode"
+	"github.com/zhcodingzh/teamwork/config/ipdns"
+	"github.com/zhcodingzh/teamwork/config/mode"
 )
 
 var (
-	prefix        = "screego"
-	files         = []string{"screego.config.development.local", "screego.config.development", "screego.config.local", "screego.config"}
-	absoluteFiles = []string{"/etc/screego/server.config"}
+	prefix        = "teamwork"
+	files         = []string{"teamwork.config.development.local", "teamwork.config.development", "teamwork.config.local", "teamwork.config"}
+	absoluteFiles = []string{"/etc/teamwork/server.config"}
 	osExecutable  = os.Executable
 	osStat        = os.Stat
 )
@@ -276,7 +276,7 @@ func getFiles(relativeTo string) []string {
 	}
 	homeDir, err := os.UserHomeDir()
 	if err == nil {
-		result = append(result, filepath.Join(homeDir, ".config/screego/server.config"))
+		result = append(result, filepath.Join(homeDir, ".config/teamwork/server.config"))
 	}
 	result = append(result, absoluteFiles...)
 	return result

@@ -7,7 +7,7 @@
 ### At root path
 
 ```nginx
-upstream screego {
+upstream teamwork {
   # Set this to the address configured in
   # SCREEGO_SERVER_ADDRESS. Default 5050
   server 127.0.0.1:5050;
@@ -17,11 +17,11 @@ server {
   listen 80;
 
   # Here goes your domain / subdomain
-  server_name screego.example.com;
+  server_name teamwork.example.com;
 
   location / {
-    # Proxy to screego
-    proxy_pass         http://screego;
+    # Proxy to teamwork
+    proxy_pass         http://teamwork;
     proxy_http_version 1.1;
 
     # Set headers for proxying WebSocket
@@ -34,7 +34,7 @@ server {
     proxy_set_header   X-Forwarded-For $proxy_add_x_forwarded_for;
     proxy_set_header   X-Forwarded-Proto http;
 
-    # The proxy must preserve the host because screego verifies it with the origin
+    # The proxy must preserve the host because teamwork verifies it with the origin
     # for WebSocket connections
     proxy_set_header   Host $http_host;
   }
@@ -44,7 +44,7 @@ server {
 ### At a sub path
 
 ```nginx
-upstream screego {
+upstream teamwork {
   # Set this to the address configured in
   # SCREEGO_SERVER_ADDRESS. Default 5050
   server 127.0.0.1:5050;
@@ -54,13 +54,13 @@ server {
   listen 80;
 
   # Here goes your domain / subdomain
-  server_name screego.example.com;
+  server_name teamwork.example.com;
 
-  location /screego/ {
-    rewrite ^/screego(/.*) $1 break;
+  location /teamwork/ {
+    rewrite ^/teamwork(/.*) $1 break;
   
-    # Proxy to screego
-    proxy_pass         http://screego;
+    # Proxy to teamwork
+    proxy_pass         http://teamwork;
     proxy_http_version 1.1;
 
     # Set headers for proxying WebSocket
@@ -73,7 +73,7 @@ server {
     proxy_set_header   X-Forwarded-For $proxy_add_x_forwarded_for;
     proxy_set_header   X-Forwarded-Proto http;
 
-    # The proxy must preserve the host because screego verifies it with the origin
+    # The proxy must preserve the host because teamwork verifies it with the origin
     # for WebSocket connections
     proxy_set_header   Host $http_host;
   }
@@ -92,10 +92,10 @@ The following modules are required:
 
 ```apache
 <VirtualHost *:80>
-    ServerName screego.example.com
+    ServerName teamwork.example.com
     Keepalive On
 
-    # The proxy must preserve the host because screego verifies it with the origin
+    # The proxy must preserve the host because teamwork verifies it with the origin
     # for WebSocket connections
     ProxyPreserveHost On
 
@@ -116,22 +116,22 @@ The following modules are required:
 
 ```apache
 <VirtualHost *:80>
-    ServerName screego.example.com
+    ServerName teamwork.example.com
     Keepalive On
 
-    Redirect 301 "/screego" "/screego/"
+    Redirect 301 "/teamwork" "/teamwork/"
 
-    # The proxy must preserve the host because screego verifies it with the origin
+    # The proxy must preserve the host because teamwork verifies it with the origin
     # for WebSocket connections
     ProxyPreserveHost On
 
     # Proxy web socket requests to /stream
-    ProxyPass "/screego/stream" ws://127.0.0.1:5050/stream retry=0 timeout=5
+    ProxyPass "/teamwork/stream" ws://127.0.0.1:5050/stream retry=0 timeout=5
 
     # Proxy all other requests to /
-    ProxyPass "/screego/" http://127.0.0.1:5050/ retry=0 timeout=5
+    ProxyPass "/teamwork/" http://127.0.0.1:5050/ retry=0 timeout=5
     #                 ^- !!trailing slash is required!!
 
-    ProxyPassReverse /screego/ http://127.0.0.1:5050/
+    ProxyPassReverse /teamwork/ http://127.0.0.1:5050/
 </VirtualHost>
 ```

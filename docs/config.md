@@ -1,19 +1,19 @@
 # Config
 
-!> TLS is required for Screego to work. Either enable TLS inside Screego or 
-   use a reverse proxy to serve Screego via TLS.
+!> TLS is required for Teamwork to work. Either enable TLS inside Teamwork or 
+   use a reverse proxy to serve Teamwork via TLS.
 
-Screego tries to obtain config values from different locations in sequence. 
+Teamwork tries to obtain config values from different locations in sequence. 
 Properties will never be overridden. Thus, the first occurrence of a setting will be used.
 
 #### Order
 
 * Environment Variables
-* `screego.config.local` (in same path as the binary)
-* `screego.config` (in same path as the binary)
-* `$HOME/.config/screego/server.config`
-* `/etc/screego/server.config`
+* `teamwork.config.local` (in same path as the binary)
+* `teamwork.config` (in same path as the binary)
+* `$HOME/.config/zhcodingzh/teamwork.config`
+* `/etc/zhcodingzh/teamwork.config`
 
 #### Config Example
 
-[screego.config.example](https://raw.githubusercontent.com/screego/server/master/screego.config.example ':include :type=code ini')
+[teamwork.config.example](https://raw.githubusercontent.com/zhcodingzh/teamwork/master/teamwork.config.example ':include :type=code ini')

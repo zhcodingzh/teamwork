@@ -7,7 +7,7 @@ import (
 
 	"github.com/rs/zerolog"
 	"github.com/rs/zerolog/log"
-	"github.com/screego/server/logger"
+	"github.com/zhcodingzh/teamwork/logger"
 	"github.com/urfave/cli"
 	"golang.org/x/crypto/bcrypt"
 	"golang.org/x/term"

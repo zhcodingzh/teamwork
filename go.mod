@@ -1,4 +1,4 @@
-module github.com/screego/server
+module github.com/zhcodingzh/teamwork
 
 go 1.24.0
 

@@ -54,7 +54,7 @@ const CreateRoom = ({room, config}: Pick<UseRoom, 'room'> & {config: UIConfig}) 
                     <Typography>
                         Nat Traversal via:{' '}
                         <Link
-                            href="https://screego.net/#/nat-traversal"
+                            href="https://github.com/zhcodingzh/teamwork"
                             target="_blank"
                             rel="noreferrer"
                         >

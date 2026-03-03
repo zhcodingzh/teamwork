@@ -4,7 +4,7 @@ import (
 	"fmt"
 
 	"github.com/rs/zerolog/log"
-	"github.com/screego/server/ws/outgoing"
+	"github.com/zhcodingzh/teamwork/ws/outgoing"
 )
 
 func init() {

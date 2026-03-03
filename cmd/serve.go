@@ -5,13 +5,13 @@ import (
 
 	"github.com/rs/zerolog"
 	"github.com/rs/zerolog/log"
-	"github.com/screego/server/auth"
-	"github.com/screego/server/config"
-	"github.com/screego/server/logger"
-	"github.com/screego/server/router"
-	"github.com/screego/server/server"
-	"github.com/screego/server/turn"
-	"github.com/screego/server/ws"
+	"github.com/zhcodingzh/teamwork/auth"
+	"github.com/zhcodingzh/teamwork/config"
+	"github.com/zhcodingzh/teamwork/logger"
+	"github.com/zhcodingzh/teamwork/router"
+	"github.com/zhcodingzh/teamwork/server"
+	"github.com/zhcodingzh/teamwork/turn"
+	"github.com/zhcodingzh/teamwork/ws"
 	"github.com/urfave/cli"
 )
 

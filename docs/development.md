@@ -1,6 +1,6 @@
 # Development
 
-Screego requires:
+Teamwork requires:
 
 - Go 1.15+
 - Node 13.x
@@ -10,10 +10,10 @@ Screego requires:
 
 ### Clone Repository
 
-Clone screego/server source from git:
+Clone zhcodingzh/teamwork source from git:
 
 ```bash
-$ git clone https://github.com/screego/server.git && cd server
+$ git clone https://github.com/zhcodingzh/teamwork.git && cd server
 ```
 
 ### GOPATH
@@ -37,7 +37,7 @@ $ (cd ui && yarn install)
 
 ### Backend
 
-Create a file named `screego.config.development.local` inside the screego folder with the content:
+Create a file named `teamwork.config.development.local` inside the teamwork folder with the content:
 
 ```ini
 SCREEGO_EXTERNAL_IP=YOURIP
@@ -70,7 +70,7 @@ Open [http://localhost:3000](http://localhost:3000) inside your favorite browser
 
 ### Lint
 
-Screego uses [golangci-lint](https://github.com/golangci/golangci-lint) for linting.
+Teamwork uses [golangci-lint](https://github.com/golangci/golangci-lint) for linting.
 
 After installation you can check the source code with:
 
@@ -90,5 +90,5 @@ $ golangci-lint run
 
 1. Build the binary
    ```bash
-   go build -ldflags "-X main.version=$(git describe --tags HEAD) -X main.mode=prod" -o screego ./main.go
+   go build -ldflags "-X main.version=$(git describe --tags HEAD) -X main.mode=prod" -o teamwork ./main.go
    ```

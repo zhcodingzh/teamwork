@@ -8,8 +8,8 @@ import (
 
 	"github.com/rs/xid"
 	"github.com/rs/zerolog/log"
-	"github.com/screego/server/config"
-	"github.com/screego/server/ws/outgoing"
+	"github.com/zhcodingzh/teamwork/config"
+	"github.com/zhcodingzh/teamwork/ws/outgoing"
 )
 
 type ConnectionMode string

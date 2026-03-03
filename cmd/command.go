@@ -10,8 +10,8 @@ import (
 
 func Run(version, commitHash string) {
 	app := cli.App{
-		Name:    "screego",
-		Version: fmt.Sprintf("%s; screego/server@%s", version, commitHash),
+		Name:    "teamwork",
+		Version: fmt.Sprintf("%s; zhcodingzh/teamwork@%s", version, commitHash),
 		Commands: []cli.Command{
 			serveCmd(version),
 			hashCmd,
